@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+
+<div style="width: 500px; margin: auto;">
+  <div class="submit-form">
+    <form>
+      <div>
+        <div class="form-group">
+          <label for="title">Title </label>
+          <input type="text" class="form-control"  id="name" required [(ngModel)]="depense.name" name="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="type" required [(ngModel)]="depense.type" name="type" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="prix" required [(ngModel)]="depense.prix" name="prix" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="date" required [(ngModel)]="depense.date" name="date" />
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="userId" required [(ngModel)]="depense.userId" name="userId" />
+        </div> -->
+
+
+
+        <button type="submit" (click)="addDepenses()" class="btn btn-success m-2">Create</button>
+        <button class="btn btn-warning m-2" (click)="newDepense()"> + Add More</button>
+        <button routerLink="/depenses" class="btn btn-danger m-2">Cancel</button>
+
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
+

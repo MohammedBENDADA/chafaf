@@ -1,0 +1,81 @@
+<app-nav></app-nav>
+
+
+<div style="width: 500px; margin: auto;">
+  <div class="submit-form">
+    <form>
+      <div *ngIf="depenses">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control"  id="name" required [(ngModel)]="depenses.name" name="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="type" required [(ngModel)]="depenses.type" name="type" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="prix" required [(ngModel)]="depenses.prix" name="prix" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="date" required [(ngModel)]="depenses.date" name="date" />
+        </div>
+
+
+      </div>
+    </form>
+    <button type="button" class="btn btn-danger" (click)="update()" >Update</button>
+
+  </div>
+</div>
+
+
+
+
+<!-- <div class="container">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="" *ngIf="!submitted">
+          <form>
+              <div class="form-row m-2">
+                <div class="form-group col-md-6 m-2">
+                  <label for="inputEmail4">Dons</label>
+                  <input type="email" class="form-control" id="name" required [(ngModel)]="depense.name" name="name">
+                </div>
+                <div class="form-group col-md-6 m-2">
+                  <label for="inputEmail4">type</label>
+                  <input type="email" class="form-control" id="rype" required [(ngModel)]="depense.type" name="name">
+                </div>
+                <div class="form-group col-md-6 m-2">
+                  <label for="inputEmail4">prix</label>
+                  <input type="email" class="form-control" id="prix" required [(ngModel)]="depense.prix" name="name">
+                </div>
+                <div class="form-group col-md-6 m-2">
+                  <label for="inputEmail4">date</label>
+                  <input type="email" class="form-control" id="date" required [(ngModel)]="depense.date" name="name">
+                </div>
+
+
+
+              </div>
+
+
+
+
+              <button (click)="addDepenses()" class="btn btn-success">Create</button>
+
+          </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Ajouter</button>
+      </div>
+    </div>
+  </div>
+</div> -->

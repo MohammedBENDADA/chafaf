@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+
+<div class="row">
+  <div class="col-12">
+    <div class="col-md-3 border-left-md pl-md-10 py-md-10 text-right">
+      <!--begin::Total Amount-->
+      <div class="font-size-h4 font-weight-bolder text-muted mb-3">TOTAL AMOUNT</div>
+      <div class="font-size-h1 font-weight-boldest"  [ngStyle]="{'color' :getTotal(depenses,dons) <0 ? 'red' : '#0bb783' }">{{getTotal(depenses,dons)}}</div>
+
+      <!--end::Total Amount-->
+      <div class="border-bottom w-100 mb-16"></div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-5">
+    <div id="chart">
+      <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [responsive]="chartOptions.responsive"
+
+      ></apx-chart>
+    </div>
+  </div>
+  <div class="col-6">
+    <div id="chart1">
+      <app-graphe2></app-graphe2>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

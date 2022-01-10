@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col m-3 ">
+      <button type="button" class="btn btn-outline-success m-3" routerLink="/add">Ajouter depenses</button>
+    </div>
+    <div class="col-4 m-3  text-right">
+      <!--begin::Total Amount-->
+      <div class="font-size-h4 font-weight-bolder text-muted mb-3">TOTAL AMOUNT</div>
+      <div class="font-size-h1 font-weight-boldest">{{getTotal(depenses)}}<span>DH</span></div>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <table class="table m-2">
+      <thead class="thead-light" >
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Depenses</th>
+          <th scope="col">Type</th>
+          <th scope="col">Mantants</th>
+          <th scope="col">Date</th>
+          <th scope="col">mod/supp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let depense of depenses">
+          <th scope="row">{{ depense.depensesId}}</th>
+          <td>{{ depense.name}}</td>
+          <td>{{ depense.type}}</td>
+          <td>{{ depense.prix}}</td>
+          <td>{{ depense.date}}</td>
+          <td>
+            <div class="row">
+              <div class="col-3">
+                <a [routerLink]="['/update',depense.depensesId]"><img src="https://img.icons8.com/ios-glyphs/20/000000/approve-and-update.png"/></a>
+              </div>
+              <div class="col-5">
+                <a (click)="delete(depense.depensesId)"><img src="https://img.icons8.com/ios-glyphs/20/000000/delete-sign.png"/></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+>
+
