@@ -44,11 +44,11 @@ namespace chafaf_back.Controllers
             return Ok(Depense);
         }
 
-        [HttpGet("/user/{idUser}")]
+        [HttpGet("/depenseUser/{idUser}")]
         public async Task<IActionResult> GetDpenseByUser(int idUser)
         {
   
-            var Depense =  _context.Depenses.Where(x => x.UserId ==idUser);
+            var Depense =  await _context.Depenses.Where(x => x.UserId ==idUser).ToListAsync();
             
             return Ok(Depense);
         }

@@ -31,7 +31,7 @@
           <td>{{ depense.name}}</td>
           <td>{{ depense.type}}</td>
           <td>{{ depense.prix}}</td>
-          <td>{{ depense.date}}</td>
+          <td>{{ depense.date | date: 'fullDate'}}</td>
           <td>
             <div class="row">
               <div class="col-3">

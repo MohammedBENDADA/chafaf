@@ -7,25 +7,27 @@ import { DonFetch } from '../_models/donFetch';
 import { Dons } from '../_models/dons';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonsService {
   baseUrl = 'http://localhost:5000/Dons';
+  userUrl = 'http://localhost:5000/donUser/';
   //headers = new HttpHeaders().set('Content-type','application/json').set('Accept', 'application/json');
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   httpOptions= {
     headers : this.headers
   }
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private authService : AuthService) { }
 
   getDons(){
     return this.http.get<Dons[]>(this.baseUrl);
   }
 
   getAll(): Observable<Dons[]> {
-    return this.http.get<Dons[]>(this.baseUrl);
+    return this.http.get<Dons[]>(`${this.userUrl}`+ this.authService.decodedToken.nameid);
   }
 
 

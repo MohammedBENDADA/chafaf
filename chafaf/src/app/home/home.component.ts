@@ -35,16 +35,15 @@ export class HomeComponent{
 
 
   constructor(private depensesServise : DepensesService, private donsServise: DonsService) {
-    this.getDons();
-    this.getDpenses();
+
     this.chartOptions = {
-      series: [...this.prix],
+      series: [10,2,44,66,99],
       chart: {
         width: 380,
         type: "pie"
       },
 
-      labels: [...this.name1],
+      labels: [],
       responsive: [
         {
           breakpoint: 480,
@@ -66,30 +65,17 @@ export class HomeComponent{
   ngOnInit(): void {
     this.getDons();
     this.getDpenses();
-    // this.depensesServise.getAll()
-    //   .subscribe(res => {
-    //     console.log(this.name)
-    //     this.name = res.map(res => res.name)
-    //     this.prix = res.map(res => res.prix)
-    //   })
   }
 
-    name() { this.depensesServise.getAll()
-      .subscribe(depenses => {
-      this.depenses=depenses;
-      var name = depenses.map(depenses => depenses.name);
 
-
-    })
-    // console.log(name);
-  }
 
 
   getDpenses(){
 
     this.depensesServise.getAll()
         .subscribe(depenses => {
-          console.log(depenses)
+          this.depenses= depenses;
+          // console.log(depenses)
           // this.depenses=depenses;
           this.prix = depenses.map(depenses => depenses.prix)
           this.name1 = depenses.map(depenses => depenses.name)
@@ -103,7 +89,7 @@ export class HomeComponent{
         .subscribe(dons => {
           this.dons=dons;
           let name = dons.map(dons => dons.name)
-        let prix = dons.map(dons => dons.prix)
+          let prix = dons.map(dons => dons.prix)
         })
   }
 
@@ -121,6 +107,7 @@ export class HomeComponent{
     }
     return totaldons-totaldepenses;
   }
+  
 
 
   getname (depenses : Depenses[]){

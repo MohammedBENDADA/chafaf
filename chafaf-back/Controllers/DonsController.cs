@@ -43,6 +43,15 @@ namespace chafaf_back.Controllers
             return Ok(Don);
         }
 
+        [HttpGet("/donUser/{idUser}")]
+        public async Task<IActionResult> GetDoneByUser(int idUser)
+        {
+  
+            var Don = await _context.Dons.Where(x => x.UserId ==idUser).ToListAsync();
+            
+            return Ok(Don);
+        }
+
         [HttpPost]
         public async Task<ActionResult<Dons>> AjouterDons (CreateDonsDto donDto)
         {

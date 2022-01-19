@@ -14,7 +14,7 @@ import { AuthService } from './auth.service';
 })
 export class DepensesService {
   baseUrl = 'http://localhost:5000/Depenses';
-  userUrl = 'http://localhost:5000/user/';
+  userUrl = 'http://localhost:5000/depenseUser/';
   // headers = new HttpHeaders().set('Content-type','application/json').set('Accept', 'application/json');
   // headers = new HttpHeaders().set('Content-Type', 'application/json');
 
